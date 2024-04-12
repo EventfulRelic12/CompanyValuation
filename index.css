@@ -1,0 +1,244 @@
+body{
+    background-image: url(./assets/images/background.jpg);
+    background-size: cover;
+    background-repeat: inherit;
+    color: rgb(144, 184, 248);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+}
+
+.search-section{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+}
+
+.ticker-form{
+    box-sizing: border-box;
+    border: solid 2px white;
+    margin: 2rem auto 2rem auto;
+    border-radius: 20px;
+    padding: 1.2rem;
+    border: 1px solid rgb(255,255,255,0.5);
+    background-color: rgb(53, 57, 65);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.ticker-form>p{
+    text-align: center;
+    color: rgb(144, 184, 248);
+    font-style: italic;
+}
+
+form{
+    display: grid;
+    grid-template-rows: repeat(4, 2fr);
+    grid-template-columns: repeat(2, 2fr);
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ticker-form label{
+    font-weight: bolder;
+    margin-bottom: 5px;
+    color: rgb(144, 184, 248);
+}
+
+.ticker-form input{
+    border-radius: 5px;
+    background-color: rgb(53, 57, 65);
+    border-color: rgb(255,255,255,0.5);
+    -webkit-box-shadow: 8px 8px 7px 0px rgba(39, 39, 39, 0.75);
+    -moz-box-shadow: 8px 8px 7px 0px rgba(39, 39, 39, 0.75);
+    box-shadow: 8px 8px 7px 0px rgba(39, 39, 39, 0.75);
+}
+
+.ticker-form input[type=text]{
+    width: 4rem;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    margin-top: 5px;
+    padding: 3px;
+}
+
+input::placeholder{
+    color: transparent;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.ticker-form input[type=submit]{
+    padding: 10px;
+    margin-top: 1rem;
+    background-color: rgb(53, 57, 65);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bolder;
+    border-radius: 20px;
+    color: rgb(144, 184, 248)
+}
+
+.ticker-form input[type=submit]:hover{
+    background-color: rgb(79, 85, 97);
+}
+
+form>div{
+    margin: 10px;
+}
+
+form>label{
+    background-color: rgb(181, 180, 221);
+}
+
+
+label{
+    display: block;
+    text-align: center;
+}
+
+.ticker{
+    grid-column: 1/3;
+}
+
+.submit-button{
+    grid-column: 1/3;
+}
+
+.search-section button{
+    box-sizing: border-box;
+    border: solid 2px white;
+    margin: 2rem auto 2rem auto;
+    border-radius: 20px;
+    padding: 1.2rem;
+    border: 1px solid rgb(255,255,255,0.5);
+    background-color: rgb(53, 57, 65);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    color: rgb(144, 184, 248);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(78, 83, 95)
+}
+
+.explanation{
+    box-sizing: border-box;
+    border: solid 2px white;
+    margin: 2rem auto 2rem auto;
+    border-radius: 20px;
+    padding: 1.2rem;
+    border: 1px solid rgb(255,255,255,0.5);
+    background-color: rgb(53, 57, 65);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    color:rgb(144, 184, 248);
+}
+
+.explanation>h2{
+    text-align: center;
+}
+
+.explanation>p{
+    font-size: 20px;
+}
+
+.display-section{
+    display: grid;
+    grid-template-rows: auto, 2fr, 2fr;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.chart{
+    margin: 1rem;
+    position: relative; 
+    height:40vh; 
+    width:45vw;
+    justify-self: center;
+}
+
+.statistics{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    box-sizing: border-box;
+    border: solid 2px white;
+    margin: 2rem;
+    border-radius: 20px;
+    padding: 1.2rem;
+    border: 1px solid rgb(255,255,255,0.5);
+    background-color: rgb(53, 57, 65);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+
+.restart-button{
+    grid-row: 1/2;
+    grid-column: 1/3;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    height: auto;
+    width: 10%;
+    justify-self: center;
+    align-self: flex-end;
+}
+
+.restart-button>button{
+    padding: 10px;
+    background-color: rgb(53, 57, 65);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bolder;
+    border-radius: 20px;
+    color: rgb(144, 184, 248);
+    border: 1px solid rgb(255,255,255,0.5)
+}
+
+.restart-button>button:hover{
+    background-color: rgb(79, 85, 97);
+}
+
+@media (max-width: 775px){
+    body{
+        background-position: center;
+        height: 200vh;
+    }
+    .display-section{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 5%;
+        align-content: center;
+        justify-content: center;
+
+    }
+
+    .chart{
+        height: 40vh;
+        width: 80vw;
+        margin: 10px
+    }
+
+    .restart-button{
+        order: 1;
+        margin: 10px;
+        align-self: center;
+    }
+
+}
+
+.hidden{
+    display: none;
+}
+
+
+

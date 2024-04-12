@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Cashflow Valuation</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- displays the initial search option for ticker -->
+    <div class="search-section">
+        <h1 class="title">Company Discounted Cashflow Valuation</h1>
+        <div class="ticker-form">
+            <form action="/">
+                <div class="ticker">
+                    <label for="ticker-selction">Stock Ticker</label>
+                    <input type="text" name="ticker-selection" placeholder="APPL"/>
+                </div>
+                <div class="growth">
+                    <label for="growth-rate">Growth-Rate</label>
+                    <input type="text" name="growth-rate" placeholder="15"/>
+                </div>
+                <div class="terminal">
+                    <label for="terminal-price">Terminal Price Multiple</label>
+                    <input type="text" name="terminal-price" placeholder="10"/>
+                </div>
+                <div class="return">
+                    <label for="desired-return">Desired Return</label>
+                    <input type="text" name="desired-return" placeholder="20"/>
+                </div>
+                <div class="years">
+                    <label for="year-number">Number of Years</label>
+                    <input type="text" name="year-number" placeholder="10"/>
+                </div>
+                <div class="submit-button">
+                    <input type="submit" value="Calculate">
+                </div>
+            </form>
+            <p>Note: all numberic values default to 0.</p>
+        </div>
+        <button type='button'>Click for Help</button>
+        <div class="explanation hidden">
+            <h2>How It Works</h2>
+            <p>To calculate the Company's value based on the present value of future cashflows, enter the following 
+                information into the respective text-boxes:<br>
+                1. Stock Ticker - a series of capital letters to represent a valid company's stock ticker. (Example: APPL)<br>
+                2. Growth-Rate - a number value representing the percent growth the company expects to have in their cashflow. (Example: 10 or 10.5)<br>
+                3. Terminal Price Multiple - a number value representing how many times greater the selling price is than the company's value. (Example: 10 or 10.5)<br>
+                4. Desired Return - a number value representing the percent return desired from the company each year. (Example: 10 or 10.5)<br>
+                5. Number of Years - a number value representing the number of years the company is allowd to grow before selling. (Example: 10 or 10.5)<br><br>
+
+                NOTE: Due to the API being used, there is a limited number of times companies can be evaluated.<br>
+                Additionally, if the input values of growth-rate, terminal price, desired return, or number of years are not a number<br>
+                they will default to 0.
+            </p>
+        </div>
+    </div>
+        <!-- displays data after successful search -->
+    <div class="display-section hidden">
+        <div class="chart cashflow-graph">
+            <canvas id="cashflow"></canvas>
+        </div>
+        <div class="chart percent-graph">
+            <canvas id="percent-change"></canvas>
+        </div>
+        <div class="statistics">
+            <div class="percent-stats">
+                <h2>Percent Change Statistics</h2>
+                <p class="cashflow-average"></p>
+                <p class="min-change"></p>
+                <p class="max-change"></p>
+            </div>
+            <div class="margin-stats">
+                <h2 id="margin-title"></h2>
+                <p class="twenty-margin"></p>
+                <p class="thirty-margin"></p>
+                <p class="forty-margin"></p>
+            </div>
+        </div>
+        <div class="chart valuation-graph">
+            <canvas id="valuation-graph"></canvas>
+        </div>
+        <div class="restart-button">
+            <button type="button" class="start-over">Analyze Another Company</button>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="index.js" charset="utf-8"></script>
+</body>
+</html>
+
+<!-- <a href="https://www.freepik.com/free-vector/3d-paper-style-black-design-with-copy-space_7074558.htm#fromView=search&page=1&position=31&uuid=2a7e77b8-c4f8-407b-b271-4395307d64f9">Image by pikisuperstar on Freepik</a> -->
